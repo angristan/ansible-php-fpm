@@ -1,0 +1,16 @@
+{{ ansible_managed | comment(decoration="; ") }}
+[{{ pool.name }}]
+
+listen = /run/php/php-fpm-{{ pool.name }}.sock
+
+user = {{ pool.user }}
+group = {{ pool.group }}
+
+listen.owner = {{ pool.user }}
+listen.group = {{ pool.group }}
+
+pm = {{ pool.pm }}
+pm.max_children = {{ pool.pm_max_children }}
+pm.start_servers = {{ pool.pm_start_servers }}
+pm.min_spare_servers = {{ pool.pm_min_spare_servers }}
+pm.max_spare_servers = {{ pool.pm_max_spare_servers }}
