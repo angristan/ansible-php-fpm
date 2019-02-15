@@ -4,6 +4,7 @@
   apt:
     name:
       - "php{{ php_version }}-fpm"
+  tags: php-fpm.install
 
 - name: Install PHP modules
   apt:
@@ -11,12 +12,14 @@
       - "php{{ php_version }}-{{ item }}"
   with_items: "{{ php_modules }}"
   notify: reload php-fpm
+  tags: php-fpm.install
 
 - name: Remove default FPM pool
   file:
     state: absent
     path: "/etc/php/{{ php_version }}/fpm/pool.d/www.conf"
   when: php_fpm_default_pool_enabled == false
+  tags: php-fpm.pools
 
 - name: Configure FPM pools
   template:
@@ -29,3 +32,10 @@
     loop_var: pool_
   notify: reload php-fpm
   tags: php-fpm.pools
+
+- name: Enable and start PHP-FPM service
+  systemd:
+    name: "php{{ php_version }}-fpm.service"
+    enabled: true
+    state: started
+  tags: php-fpm.install
