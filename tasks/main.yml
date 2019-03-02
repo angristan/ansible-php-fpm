@@ -33,6 +33,16 @@
   notify: reload php-fpm
   tags: php-fpm.pools
 
+- name: Set PHP options for FPM
+  ini_file:
+    path: /etc/php/{{ php_version }}/fpm/php.ini
+    section: "{{ item.section | default('PHP') }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items: "{{ php_fpm_ini_options }}"
+  notify: reload php-fpm
+  tags: php-fpm.options
+
 - name: Enable and start PHP-FPM service
   systemd:
     name: "php{{ php_version }}-fpm.service"

@@ -1,5 +1,8 @@
 ---
 
+# Options
+php_fpm_ini_options: []
+
 # Default pool
 php_fpm_default_pool_enabled: false
 
