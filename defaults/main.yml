@@ -16,6 +16,7 @@ php_fpm_pool_defaults:
   pm_start_servers: 2
   pm_min_spare_servers: 1
   pm_max_spare_servers: 3
+  clear_env: true
 php_fpm_pools: []
 
 # Modules

@@ -14,3 +14,5 @@ pm.max_children = {{ pool.pm_max_children }}
 pm.start_servers = {{ pool.pm_start_servers }}
 pm.min_spare_servers = {{ pool.pm_min_spare_servers }}
 pm.max_spare_servers = {{ pool.pm_max_spare_servers }}
+
+clear_env = {{ 'yes' if pool.clear_env else 'no' }}
