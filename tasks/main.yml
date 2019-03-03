@@ -39,6 +39,7 @@
     section: "{{ item.section | default('PHP') }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
+    state: "{{ item.state | default('present') }}"
   with_items: "{{ php_fpm_ini_options }}"
   notify: reload php-fpm
   tags: php-fpm.options
