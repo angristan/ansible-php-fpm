@@ -22,7 +22,8 @@ The role should work on all Debian-based distributions.
         pm_start_servers: 4
         pm_min_spare_servers: 2
         pm_max_spare_servers: 6
-   php_fpm_ini_options:
-      - option: post_max_size
-        value: 100M
+    php_fpm_ini_options:
+      - {option: post_max_size, value: 100M}
+      - {option: upload_max_filesize, value: 100M}
+      - {section: opcache, option: opcache.enable, value: 1}
 ```
