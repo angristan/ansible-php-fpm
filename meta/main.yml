@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: php-fpm
+  role_name: php_fpm
   author: angristan
   description: Ansible role for Caddy
   license: MIT
