@@ -18,15 +18,15 @@
   file:
     state: absent
     path: "/etc/php/{{ php_version }}/fpm/pool.d/www.conf"
-  when: php_fpm_default_pool_enabled == false
+  when: not php_fpm_default_pool_enabled
   tags: php-fpm.pools
 
 - name: Configure FPM pools
   template:
     src: pool.conf.j2
     dest: "/etc/php/{{ php_version }}/fpm/pool.d/{{ pool.name }}.conf"
-  vars: 
-    pool: "{{php_fpm_pool_defaults | combine(pool_)}}"
+  vars:
+    pool: "{{ php_fpm_pool_defaults | combine(pool_) }}"
   loop: "{{ php_fpm_pools }}"
   loop_control:
     loop_var: pool_
