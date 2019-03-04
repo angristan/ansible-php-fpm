@@ -6,7 +6,7 @@ This is a simple Ansible role for installing PHP-FPM with a set of modules and p
 
 The role should work on all Debian-based distributions.
 
-## Sample playbook
+## Example playbook
 
 ```yaml
 ---
@@ -29,3 +29,11 @@ The role should work on all Debian-based distributions.
       - {option: upload_max_filesize, value: 100M}
       - {section: opcache, option: opcache.enable, value: 1}
 ```
+
+## License
+
+MIT
+
+## Author Information
+
+See my other Ansible roles at [angristan/ansible-roles](https://github.com/angristan/ansible-roles).
