@@ -1,5 +1,7 @@
 # Ansible role for PHP-FPM
 
+![travis build](https://api.travis-ci.com/angristan/ansible-php-fpm.svg?branch=master)
+
 This is a simple Ansible role for installing PHP-FPM with a set of modules and pools.
 
 The role should work on all Debian-based distributions.
