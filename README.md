@@ -1,6 +1,6 @@
 # Ansible role for PHP-FPM
 
-![travis build](https://api.travis-ci.com/angristan/ansible-php-fpm.svg?branch=master)
+[![CircleCI](https://circleci.com/gh/angristan/ansible-php-fpm.svg?style=svg)](https://circleci.com/gh/angristan/ansible-php-fpm)
 
 This is a simple Ansible role for installing PHP-FPM with a set of modules and pools.
 
