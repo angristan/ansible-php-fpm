@@ -6,6 +6,14 @@ This is a simple Ansible role for installing PHP-FPM with a set of modules and p
 
 The role should work on all Debian-based distributions.
 
+## Installation
+
+Add this to your `requirements.yml`:
+
+```yml
+- src: https://github.com/angristan/ansible-php-fpm
+```
+
 ## Example playbook
 
 ```yaml
