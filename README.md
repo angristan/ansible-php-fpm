@@ -20,7 +20,7 @@ Add this to your `requirements.yml`:
 ---
 
 - hosts: myhost
-  roles: phpf-fpm
+  roles: php-fpm
   vars:
     php_version: 7.2
     php_modules:
