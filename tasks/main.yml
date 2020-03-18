@@ -8,8 +8,7 @@
 
 - name: Install PHP modules
   apt:
-    name:
-      - "php{{ php_version }}-{{ item }}"
+    name: "php{{ php_version }}-{{ item }}"
   with_items: "{{ php_modules }}"
   notify: reload php-fpm
   tags: php-fpm.install
