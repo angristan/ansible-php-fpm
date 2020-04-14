@@ -15,4 +15,6 @@ pm.start_servers = {{ pool.pm_start_servers }}
 pm.min_spare_servers = {{ pool.pm_min_spare_servers }}
 pm.max_spare_servers = {{ pool.pm_max_spare_servers }}
 
+pm.status_path = {{ pool.pm_status_path }}
+
 clear_env = {{ 'yes' if pool.clear_env else 'no' }}
