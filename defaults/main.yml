@@ -18,6 +18,8 @@ php_fpm_pool_defaults:
   pm_max_spare_servers: 3
   pm_status_path: /status
   clear_env: true
+  tcp_enabled: false
+  listen_port: 9000
 php_fpm_pools: []
 
 # Modules

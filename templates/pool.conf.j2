@@ -1,7 +1,11 @@
 {{ ansible_managed | comment(decoration="; ") }}
 [{{ pool.name }}]
 
+{% if pool.tcp_enabled %}
+listen = 127.0.0.1:{{ pool.listen_port }}
+{% else %}
 listen = /run/php/php-fpm-{{ pool.name }}.sock
+{% endif %}
 
 user = {{ pool.user }}
 group = {{ pool.group }}
