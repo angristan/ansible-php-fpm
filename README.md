@@ -1,7 +1,5 @@
 # Ansible role for PHP-FPM
 
-[![CircleCI](https://circleci.com/gh/angristan/ansible-php-fpm.svg?style=svg)](https://circleci.com/gh/angristan/ansible-php-fpm)
-
 This is a simple Ansible role for installing PHP-FPM with a set of modules and pools.
 
 The role should work on all Debian-based distributions.
